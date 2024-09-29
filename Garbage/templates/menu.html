@@ -1,0 +1,30 @@
+{% load static %}
+<section id="navbar" class="navbar" style="font-family: cursive;">
+    <div class="navbar-brand">
+        <p href="#" id="navbar-brand">
+          <img src="{% static 'images/logo.png' %}" alt="Logo"/>
+          <p style="font-family: cursive;">PurePickupPlanet</p>
+        </p>
+      </div>
+
+      <ul class="nav">
+        <div class="close-menu">
+          <ion-icon name="close-outline"></ion-icon>
+        </div>
+        <li class="nav-item"><a href="#main">Home</a></li>
+        <li class="nav-item"><a href="/pages/orders.html">Orders</a></li>
+        <li class="nav-item"><a href="#customers">Customers</a></li>
+        <li class="nav-item"><a href="#services">Services</a></li>
+        <li class="nav-item"><a href="#footer">Footer</a></li>
+      </ul>
+
+      <div class="auth-section" id="section">
+        <div class="nav-button-group">
+          <button><a href="{% url 'login_view' %}"> <i class="fa-regular fa-user"></i></a></button>
+          
+        </div>
+      </div>
+      <div class="hamburger">
+        <ion-icon name="reorder-four-outline"></ion-icon>
+      </div>
+</section>

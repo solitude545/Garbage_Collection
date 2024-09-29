@@ -1,9 +1,5 @@
 * text=auto
-
-# Treat these files as binary to avoid line ending conversions
 *.png binary
 *.jpg binary
-
-# Specific file types with explicit line endings
 *.sh text eol=lf
 *.bat text eol=crlf 
