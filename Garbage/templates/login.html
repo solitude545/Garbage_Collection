@@ -5,12 +5,8 @@
     <div class="container">
       <div class="forms-container">
         <div class="message-container">
-          {% if messages %}
-          <ul>
-            {% for message in messages %}
-            <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
-            {% endfor %}
-          </ul>
+          {% if error %}
+          <p style="color: red;">{{ error }}</p>
           {% endif %}
         </div>
 
@@ -63,11 +59,11 @@
       <div class="panels-container">
         <div class="panel left-panel">
           <div class="content">
-            <h3 style="color:aqua ;" >New here ?</h3>
-            <p style="color:brown ;">
+            <h3 style="color:#333 ;" >New here ?</h3>
+            <p style="color:#333 ;">
               Be a part of the planet
             </p>
-            <button class="btn dark" id="sign-up-btn">
+            <button class="btn solid" id="sign-up-btn">
               Sign up
             </button>
           </div>
@@ -75,7 +71,7 @@
         <div class="panel right-panel">
           <div class="content">
             <h3>One of us ?</h3>
-            <button class="btn dark" id="sign-in-btn">
+            <button class="btn solid" id="sign-in-btn">
               Sign in
             </button>
           </div>

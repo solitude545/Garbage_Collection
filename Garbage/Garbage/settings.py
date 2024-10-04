@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'Garbage.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'customersdata',
+        'NAME': 'customers2',
         'USER': 'root',
         'PASSWORD':'root123',
         'HOST':'localhost',
@@ -104,7 +104,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
+AUTH_USER_MODEL='Customers.User'
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 

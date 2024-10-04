@@ -1,0 +1,63 @@
+.cardcontainer {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    padding-top: 60px;
+    flex-grow: 1;
+    height: 45vh; /* Adjust height as needed */
+}
+
+.cardbox {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    width: 30%; /* Width of each box */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: white; /* Change text color for better visibility */
+    background-size: cover; /* Ensure the background image covers the box */
+    background-position: center; /* Center the background image */
+}
+
+.cardbox1 {
+    height: 200px; /* Set height for visibility */
+    background-image: url("https://media.geeksforgeeks.org/wp-content/uploads/20220913104138/NonBiodegradableWaste.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%; /* Stretch to fit */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: white; /* Adjust text color for visibility */
+    text-align: center;
+    padding: 20px; /* Adjust as needed */
+}
+
+.cardbox2 {
+    width: 30%; /* Adjust as needed */
+    height: 200px; /* Set height for visibility */
+    background-image: url("https://media.geeksforgeeks.org/wp-content/uploads/20220913104107/BiodegradableWaste.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%; /* Stretch to fit */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: white; /* Adjust text color for visibility */
+    text-align: center;
+    padding: 20px; /* Adjust as needed */
+}
+
+.cardbox3 {
+    height: 200px; /* Set height for visibility */
+    background-image: url("https://media-cdn.socastsrm.com/wordpress/wp-content/blogs.dir/2798/files/2023/09/blog-image-1920-1080-px-8-1.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%; /* Stretch to fit */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: white; /* Adjust text color for visibility */
+    text-align: center;
+    padding: 20px; /* Adjust as needed */
+}

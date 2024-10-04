@@ -1,0 +1,50 @@
+.biobody {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+}
+.bioheader h1{
+    background: #1a1a1a;
+    color: #fff;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.bioheaderh2{
+    font-family: 'Lora', serif;
+    font-size: 2.5em;
+    margin: 0;
+}
+.biocontainer {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+.bioimg {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.biocontent {
+    margin-top: 20px;
+    line-height: 1.6;
+}
+.biobutton {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background: #e91e63;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+.biobutton:hover {
+    background: #d81b60;
+}
