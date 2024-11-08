@@ -35,5 +35,12 @@ class UserProfile(models.Model):
     phone = models.CharField(max_length=15)
     email = models.EmailField(unique=True)
 
-    def __str__(self):
+class Order(models.Model):
+     fullname=models.CharField(max_length=100)
+     wastetype=models.CharField(max_length=100)
+     wasteweight=models.CharField(max_length=100)
+     location=models.CharField(max_length=100)
+     
+
+def __str__(self):
         return self.user.username

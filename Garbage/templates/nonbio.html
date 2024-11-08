@@ -1,0 +1,44 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block banner %}
+<section class="biobody">
+    <div class="biocontainer">
+        <h2 style="font-family: 'Lora', serif; font-size: 2.5em; margin: 0; text-align: center; margin-bottom: 20px;">Nonbio Waste</h2>
+        <img src="your-image-url.jpg" class="bioimg" alt="Bio Waste Image">
+        
+        <div class="biocontent">
+            <h3>Definition</h3>
+            <p>Non-bio waste refers to materials that are not biodegradable and do not decompose naturally. This type of waste typically includes synthetic and inorganic materials.</p>
+
+            <h3>Composition</h3>
+            <ul>
+                <li>Plastics: Bags, bottles, containers, and packaging materials.</li>
+                <li>Metals: Cans, aluminum foil, and metal scraps.</li>
+                <li>Electronic Waste: Broken or obsolete electronics, such as computers, phones, and appliances.</li>
+            </ul>
+
+            <h3>Disposal Methods</h3>
+            <ul>
+                <li>Recycling: Many non-bio waste materials can be processed and repurposed, reducing the need for new raw materials.</li>
+                <li>Landfilling: Non-bio waste often ends up in landfills, where it can persist for hundreds of years, potentially causing environmental harm.</li>
+                <li>Landfilling: While not ideal, some bio waste may still end up in landfills. It’s crucial to minimize this to reduce methane emissions.</li>
+                <li>Incineration: Some non-bio waste can be burned to reduce volume, though this can release harmful emissions if not properly managed.</li>
+                <li>Specialized Disposal: Hazardous waste requires special collection and treatment to prevent environmental contamination.</li>
+            </ul>
+
+            <h3>Benefits of Proper Disposal</h3>
+            <ul>
+                <li>Non-bio waste contributes significantly to landfill volume and environmental pollution.</li>
+                <li>Encouraging recycling and proper disposal methods is essential for reducing the impact on the planet.</li>
+                <li>Lowers greenhouse gas emissions</li>
+                <li>Effective management of non-bio waste is crucial for sustainable waste practices. Promote awareness and proper segregation to enhance recycling efforts!</li>
+            </ul>
+
+            <div style="display: flex; justify-content: center; margin-top: 20px;">
+                <a href="{% url 'order_view' %}" style="display: inline-block; padding: 10px 20px; margin-top: 20px; background: #007bff; color: white; text-decoration: none; border-radius: 5px; transition: background 0.3s ease;">Book your slot</a>
+            </div>  
+        </div>
+    </div>
+</section>
+
+{% endblock banner %}

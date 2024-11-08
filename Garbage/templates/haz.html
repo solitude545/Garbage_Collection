@@ -1,0 +1,45 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block banner %}
+<section class="biobody">
+    <div class="biocontainer">
+        <h2 style="font-family: 'Lora', serif; font-size: 2.5em; margin: 0; text-align: center; margin-bottom: 20px;">Hazardous Waste</h2>
+        <img src="your-image-url.jpg" class="bioimg" alt="Bio Waste Image">
+        
+        <div class="biocontent">
+            <h3>Definition</h3>
+            <p>Hazardous waste refers to materials that pose significant risks to human health or the environment due to their chemical properties. This type of waste can be toxic, corrosive, flammable, or reactive.</p>
+
+            <h3>Composition</h3>
+            <ul>
+                <li>Chemical Waste: Solvents, paints, and pesticides.</li>
+                <li>Electronic Waste (e-waste): Old computers, phones, and appliances containing harmful substances like lead and mercury.</li>
+                <li>Medical Waste: Sharps, expired medications, and biological waste from healthcare facilities.    </li>
+                <li>Batteries: Lead-acid and lithium batteries that contain toxic materials.</li>
+                <li>Asbestos: Materials used in construction that can cause serious health issues when disturbed.</li>
+            </ul>
+
+            <h3>Disposal Methods</h3>
+            <ul>
+                <li>Specialized Treatment Facilities: Hazardous waste should be taken to facilities designed to handle and treat such materials safely.</li>
+                <li>Incineration: Controlled burning can reduce volume and treat some types of hazardous waste, but must be done with care to minimize emissions.</li>
+                <li>Landfilling: Only specially designated landfills can accept hazardous waste, ensuring it is contained and monitored to prevent leaks.</li>
+                <li>Recycling: Certain hazardous materials, like some metals from e-waste, can be recycled if handled properly.</li>
+            </ul>
+
+            <h3>Benefits of Proper Disposal</h3>
+            <ul>
+                <li>Prevents environmental contamination and public health risks.</li>
+                <li>Ensures compliance with local and federal regulations regarding hazardous materials.</li>
+                <li>Promotes recycling and safe treatment, reducing the demand for new resources.</li>
+                <li>Effective management of hazardous waste is critical for safeguarding health and the environment. Raise awareness and encourage responsible disposal practices in your community!</li>
+            </ul>
+
+            <div style="display: flex; justify-content: center; margin-top: 20px;">
+                <a href="{% url 'order_view' %}" style="display: inline-block; padding: 10px 20px; margin-top: 20px; background: #007bff; color: white; text-decoration: none; border-radius: 5px; transition: background 0.3s ease;">Book your slot</a>
+            </div>  
+        </div>
+    </div>
+</section>
+
+{% endblock banner %}

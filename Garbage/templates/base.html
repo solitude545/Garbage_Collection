@@ -2,8 +2,8 @@
 {% load static %}
 {% block banner %}
 <div class="cardcontainer">
-    <a class="cardbox cardbox1" href="#"></a>
+    <a class="cardbox cardbox1" href="{% url 'nonbio_view' %}"></a>
     <a class="cardbox cardbox2" href="{% url 'bio_view' %}"></a>
-    <a class="cardbox cardbox3" href="#"></a>
+    <a class="cardbox cardbox3" href="{% url 'haz_view' %}"></a>
 </div>
 {% endblock banner %}

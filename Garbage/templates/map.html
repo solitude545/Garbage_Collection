@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Location</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        #map { height: 400px; }
+    </style>
+</head>
+<body>
+    <h1>Select Your Location</h1>
+    <div id="map"></div>
+    <form action="{% url 'submit_location' %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" id="location" name="location" required>
+        <button type="submit">Submit Location</button>
+    </form>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Initialize the map centered on Calicut (Kerala)
+        var map = L.map('map').setView([11.2588, 75.7804], 13); // Coordinates for Calicut, Kerala
+
+        // Add OpenStreetMap tile layer
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+        }).addTo(map);
+
+        // Define an array of locations with their coordinates and names
+        var locations = [
+            { lat: 11.272670119132048, lng: 75.77903382241381, name: 'Nadakkavu' }, 
+            { lat: 11.252724675082739, lng: 75.77502564861761, name: 'Mananchira' },
+            { lat: 11.240800084631362, lng: 75.81578044414378, name: 'Mankavu' },
+            { lat: 11.270144990861962, lng: 75.82548742691469, name: 'Chevayoor' },
+            { lat: 11.292314687253796, lng: 75.76283878088415, name: 'Westhill' },
+            { lat: 11.190968417040745, lng: 75.82909576930011, name: 'Cheruvannor' }
+        ];
+
+        // Loop through the locations array and add a marker for each place
+        locations.forEach(function(location) {
+            var marker = L.marker([location.lat, location.lng]).addTo(map);
+            marker.bindPopup(location.name); // Add a popup with the name of the location
+
+            // When the marker is clicked, update the form input field with the selected location
+            marker.on('click', function() {
+                document.getElementById('location').value = location.lat + ', ' + location.lng;
+            });
+        });
+
+        // Add a draggable marker to the map at Calicut's location
+        var marker = L.marker([11.2588, 75.7804], { draggable: true }).addTo(map);
+
+        // Update the hidden input field with the draggable marker's coordinates
+        function updateLocation() {
+            var position = marker.getLatLng();
+            document.getElementById('location').value = position.lat + ', ' + position.lng;
+        }
+
+        // Listen for the dragend event to update location
+        marker.on('dragend', updateLocation);
+
+        // Listen for clicks on the map to move the marker and update location
+        map.on('click', function(e) {
+            marker.setLatLng(e.latlng);
+            updateLocation();
+        });
+
+        // Initialize location on map load
+        updateLocation();
+    </script>
+</body>
+</html>

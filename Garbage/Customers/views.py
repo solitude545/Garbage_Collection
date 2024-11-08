@@ -2,6 +2,11 @@ from django.shortcuts import render,redirect
 from.models import *
 from django.contrib import messages
 from django.contrib.auth import login as auth_login,authenticate
+import plotly.express as px
+import pandas as pd
+from django.http import HttpResponseRedirect,HttpResponse
+
+
 # Create your views here.
 def home(request):
     return render(request,'home.html')
@@ -51,3 +56,34 @@ def base_view(request):
 
 def bio_view(request):
     return render(request, 'bio.html')
+def nonbio_view(request):
+    return render(request, 'nonbio.html')
+def haz_view(request):
+    return render(request, 'haz.html')
+def order_view(request):
+    if request.method=="POST":
+        fullname = request.POST.get('name')
+        wastetype = request.POST.get('wasteType')
+        Weight = request.POST.get('weight')
+        location = request.POST.get('location')
+        query = Order(fullname=fullname,wastetype=wastetype,wasteweight=Weight,location=location)
+        query.save()
+    return render(request, 'orders.html')
+
+
+def map_view(request):
+    if request.method == "POST":
+        name = request.POST.get('name')
+
+    return render(request, 'map.html')
+
+def submit_location(request):
+    if request.method == "POST":
+        # Get the location from the POST request
+        location = request.POST.get('location')
+        
+        # Pass the location to the 'orders.html' template
+        return render(request, 'orders.html', {'location': location})
+
+    # If it's a GET request or no location, render the original page
+    return render(request, 'map.html')
