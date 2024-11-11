@@ -14,7 +14,11 @@
     <div id="map"></div>
     <form action="{% url 'submit_location' %}" method="POST">
         {% csrf_token %}
+        <input type="hidden" id="name" name="name" value="{{data.name}}" required>
+        <input type="hidden" id="type" name="type" value="{{data.type}}" required>
+        <input type="hidden" id="weight" name="weight" value="{{data.weight}}" required>
         <input type="hidden" id="location" name="location" required>
+        
         <button type="submit">Submit Location</button>
     </form>
 

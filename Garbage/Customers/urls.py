@@ -14,6 +14,9 @@ urlpatterns=[
     path('order/',views.order_view,name='order_view'),
     path('map/',views.map_view,name='map_view'),
     path('submit_location',views.submit_location,name='submit_location'),
+    path('conford',views.conord_view,name='conford_view'),
+    path('pay',views.payment_view,name='payment_view'),
+    
     
 
     

@@ -60,30 +60,49 @@ def nonbio_view(request):
     return render(request, 'nonbio.html')
 def haz_view(request):
     return render(request, 'haz.html')
+def conord_view(request):
+    return render(request, 'conforder.html')
 def order_view(request):
-    if request.method=="POST":
-        fullname = request.POST.get('name')
-        wastetype = request.POST.get('wasteType')
-        Weight = request.POST.get('weight')
-        location = request.POST.get('location')
-        query = Order(fullname=fullname,wastetype=wastetype,wasteweight=Weight,location=location)
-        query.save()
     return render(request, 'orders.html')
 
 
 def map_view(request):
     if request.method == "POST":
         name = request.POST.get('name')
-
-    return render(request, 'map.html')
+        type = request.POST.get('wasteType')
+        weight = request.POST.get('weight')
+        ord = {
+            'name' : name,
+            'type' : type,
+            'weight' : weight
+        }
+    return render(request, 'map.html',{'data':ord})
 
 def submit_location(request):
     if request.method == "POST":
-        # Get the location from the POST request
+       
+        name = request.POST.get('name')
+        type = request.POST.get('type')
+        weight = request.POST.get('weight')
         location = request.POST.get('location')
+        ord_upd ={
+            'name': name,
+            'type' : type,
+            'weight' : weight,
+            'location' : location
+        }
+        print(ord_upd)
         
-        # Pass the location to the 'orders.html' template
-        return render(request, 'orders.html', {'location': location})
+        
+    return render(request, 'conforder.html', {'data': ord_upd})
 
-    # If it's a GET request or no location, render the original page
-    return render(request, 'map.html')
+    
+def payment_view(request):
+        if request.method == "POST":
+            fullname = request.POST.get('name')
+            wastetype = request.POST.get('type')
+            Weight = request.POST.get('weight')
+            location = request.POST.get('location')
+            query = Order(fullname=fullname,wastetype=wastetype,wasteweight=Weight,location=location)
+            query.save()
+        return render(request, 'payment.html')
